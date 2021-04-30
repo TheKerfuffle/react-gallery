@@ -1,5 +1,5 @@
 ### Task List
-- Use `axios` to retrieve (`GET`) data from to `/gallery` and store it in `App.jsx`.
+X - Use `axios` to retrieve (`GET`) data from to `/gallery` and store it in `App.jsx`.
 
 
 
@@ -17,9 +17,3 @@
     - Display the number likes for each item and include a like button.
     - When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
     - Update the gallery each time a like button is clicked.
-
-
-
-    ![mockup one](wireframes/first-mockup.png)
-
-![mockup two](wireframes/second-mockup.png)
