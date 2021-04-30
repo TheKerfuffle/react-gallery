@@ -1,6 +1,6 @@
 import './GalleryItem.css'
 
-import {useState} from 'react';
+import { useState } from 'react';
 
 function GalleryItem({ picture }) {
 
@@ -18,15 +18,18 @@ function GalleryItem({ picture }) {
 
     return (
         <>
-            <div className="this" >
-                {state ? (
-                    <img onClick={toggleState} src={picture.path} />
+            <div className="card" >
+                <div className="imageBox">
 
-                ) : (
-                    <p onClick={toggleState}>{picture.description}</p>
-                )}
+                    {state ? (
+                        <img onClick={toggleState} src={picture.path} />
 
-                <p>Likes: {picture.likes}</p>
+                    ) : (
+                        <p onClick={toggleState}>{picture.description}</p>
+                    )}
+                </div>
+
+                <h5>Likes: {picture.likes}</h5>
                 <button>+1</button>
             </div>
 

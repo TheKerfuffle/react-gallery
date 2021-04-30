@@ -1,20 +1,23 @@
-img {
+.imageBox, img {
+    display: flex;
+    align-items: center;
     width: 200px;
     height: 200px;
-    margin: 20px;
-    align-items: center;
+    /* padding: 50%; */
 }
 
-.this {
-    width: 200px;
-    height: 200px;
+.card {
     margin: 20px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    border: solid black 1px;
+    padding: 0;
 }
 
 p {
-    display: inline-block;
+    display: flex;
     justify-content: center;
-    
+    text-align: center;
 }
