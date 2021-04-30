@@ -2,4 +2,19 @@ img {
     width: 200px;
     height: 200px;
     margin: 20px;
+    align-items: center;
+}
+
+.this {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    display: inline-block;
+    justify-content: center;
+}
+
+p {
+    display: inline-block;
+    justify-content: center;
+    
 }
