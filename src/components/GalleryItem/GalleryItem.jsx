@@ -1,11 +1,35 @@
 import './GalleryItem.css'
 
-function GalleryItem({picture}) {
-    return(
+import {useState} from 'react';
+
+function GalleryItem({ picture }) {
+
+    const [state, setState] = useState(true);
+
+    function toggleState() {
+        if (state) {
+            setState(false);
+        } else {
+            setState(true);
+        }
+    }
+
+
+
+    return (
         <>
-            <img src={picture.path}/>
-            <p>LIkes: {picture.likes}</p>
-            <button>+1</button>
+            <div className="this" >
+                {state ? (
+                    <img onClick={toggleState} src={picture.path} />
+
+                ) : (
+                    <p onClick={toggleState}>{picture.description}</p>
+                )}
+
+                <p>Likes: {picture.likes}</p>
+                <button>+1</button>
+            </div>
+
         </>
     )
 }
