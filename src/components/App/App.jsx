@@ -20,7 +20,7 @@ function App() {
     axios.get('/gallery').then((response) => {
       console.log('this is the response from getPictures', response.data);
 
-      // take the data from the response and assign it to the famousPeopleArray
+      // take the data from the response and assign it to the pictureArray
       setPictureArray(response.data);
     })
   }
@@ -31,7 +31,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList pictureArray={pictureArray}/>
+        <GalleryList pictureArray={pictureArray} getPictures={getPictures}/>
       </div>
     );
 }

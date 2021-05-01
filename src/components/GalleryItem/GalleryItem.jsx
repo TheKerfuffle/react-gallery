@@ -1,8 +1,8 @@
-import './GalleryItem.css'
-
+import './GalleryItem.css';
+import axios from 'axios';
 import { useState } from 'react';
 
-function GalleryItem({ picture }) {
+function GalleryItem({ picture, getPictures }) {
 
     const [state, setState] = useState(true);
 
@@ -14,6 +14,23 @@ function GalleryItem({ picture }) {
         }
     }
 
+    function addLike (event) {
+        console.log('ID IS', event.currentTarget.dataset.id);
+        let id = event.currentTarget.dataset.id;
+
+        axios ({
+            method: 'PUT',
+            url: `/gallery/like/${id}`,
+        })
+        .then( response => {
+            console.log('PUT response from server:', response);
+            getPictures();
+        })
+        .catch( error => {
+            console.log('error on put request:', error);
+        })
+    }
+
 
 
     return (
@@ -23,14 +40,13 @@ function GalleryItem({ picture }) {
 
                     {state ? (
                         <img onClick={toggleState} src={picture.path} />
-
                     ) : (
                         <p onClick={toggleState}>{picture.description}</p>
                     )}
                 </div>
 
                 <h5>Likes: {picture.likes}</h5>
-                <button>+1</button>
+                <button data-id={picture.id} onClick={addLike}>+1</button>
             </div>
 
         </>
